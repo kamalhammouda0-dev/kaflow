@@ -1,0 +1,102 @@
+@import "tailwindcss";
+
+:root {
+  /* Light, warm, trustworthy base */
+  --background: #faf9f6;
+  --surface: #ffffff;
+  --foreground: #15171c;
+  --muted: #6b7280;
+  --border: #e7e5e0;
+
+  /* Brand accents — "flow" gradient */
+  --accent-blue: #3b5ef5;
+  --accent-violet: #8b5cf6;
+
+  /* Dark "future" theme */
+  --dark-bg: #0a0b0f;
+  --dark-surface: #13141a;
+  --dark-foreground: #f5f6fa;
+  --dark-muted: #9aa0ad;
+  --dark-border: #232530;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-surface: var(--surface);
+  --color-foreground: var(--foreground);
+  --color-muted: var(--muted);
+  --color-border: var(--border);
+
+  --color-accent-blue: var(--accent-blue);
+  --color-accent-violet: var(--accent-violet);
+
+  --color-dark-bg: var(--dark-bg);
+  --color-dark-surface: var(--dark-surface);
+  --color-dark-foreground: var(--dark-foreground);
+  --color-dark-muted: var(--dark-muted);
+  --color-dark-border: var(--dark-border);
+
+  --font-display: var(--font-space-grotesk);
+  --font-sans: var(--font-manrope);
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+}
+
+@layer utilities {
+  .font-display {
+    font-family: var(--font-display);
+  }
+
+  .text-gradient {
+    background-image: linear-gradient(100deg, var(--accent-blue), var(--accent-violet));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  .bg-gradient-flow {
+    background-image: linear-gradient(100deg, var(--accent-blue), var(--accent-violet));
+  }
+
+  .container-flow {
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+
+  @media (min-width: 768px) {
+    .container-flow {
+      padding-left: 2.5rem;
+      padding-right: 2.5rem;
+    }
+  }
+
+  .glow-ring {
+    box-shadow: 0 0 0 1px var(--border), 0 20px 60px -25px rgba(59, 94, 245, 0.25);
+  }
+
+  .bg-dot-grid {
+    background-image: radial-gradient(circle, rgba(59, 94, 245, 0.16) 1px, transparent 1px);
+    background-size: 28px 28px;
+  }
+
+  .bg-dot-grid-dark {
+    background-image: radial-gradient(circle, rgba(139, 92, 246, 0.18) 1px, transparent 1px);
+    background-size: 28px 28px;
+  }
+
+  .mask-fade-b {
+    mask-image: linear-gradient(to bottom, black 60%, transparent 100%);
+  }
+}
+
+::selection {
+  background: var(--accent-violet);
+  color: white;
+}
