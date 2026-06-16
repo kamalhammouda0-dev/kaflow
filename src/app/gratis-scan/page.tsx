@@ -3,30 +3,39 @@ import { Gauge, Search, MousePointerClick, Bot, FileSearch, Mail, FileCheck2 } f
 import { FadeIn, FadeInStagger, FadeInItem } from "@/components/FadeIn";
 import { SectionHeading } from "@/components/SectionHeading";
 import { ScanForm } from "@/components/ScanForm";
+import { BreadcrumbSchema } from "@/components/StructuredData";
+
+const title = "Gratis website- en online scan | KA Flow";
+const description =
+  "Vraag een gratis scan aan en ontdek de pijnpunten in je website, vindbaarheid en online aanwezigheid. Voor ZZP'ers en MKB in Gelderland en heel Nederland.";
 
 export const metadata: Metadata = {
-  title: "Gratis Website & Online Scan — KA Flow",
-  description:
-    "Vraag een gratis scan aan en ontdek de pijnpunten in je website, vindbaarheid en online aanwezigheid. Voor ZZP'ers en MKB in Gelderland en heel Nederland.",
+  title,
+  description,
+  alternates: { canonical: "/gratis-scan" },
+  openGraph: { title, description, url: "/gratis-scan" },
+  twitter: { title, description },
 };
 
 const checks = [
-  { icon: Gauge, title: "Snelheid & techniek", text: "Hoe snel laadt je website, en op mobiel?" },
+  { icon: Gauge, title: "Snelheid & techniek", text: "Hoe snel laadt je website, ook op mobiel?" },
   { icon: Search, title: "Vindbaarheid (SEO)", text: "Scoor je goed in Google, lokaal en landelijk?" },
   { icon: MousePointerClick, title: "UX & conversie", text: "Nemen bezoekers ook echt actie op je site?" },
   { icon: Bot, title: "Automatiseringskansen", text: "Welk handwerk kan een AI-agent overnemen?" },
 ];
 
 const steps = [
-  { icon: FileSearch, title: "Aanvragen", text: "Vul het formulier in met je gegevens en (indien aanwezig) je website." },
-  { icon: Gauge, title: "Wij analyseren", text: "Wij nemen je website en online vindbaarheid grondig onder de loep." },
-  { icon: FileCheck2, title: "Rapport ontvangen", text: "Je ontvangt een helder overzicht van kansen en verbeterpunten." },
-  { icon: Mail, title: "Vrijblijvend gesprek", text: "Optioneel bespreken we de resultaten samen, zonder verplichtingen." },
+  { icon: FileSearch, title: "Aanvragen", text: "Vul het formulier in met je gegevens en, als je die hebt, je website." },
+  { icon: Gauge, title: "Wij analyseren", text: "We nemen je website en online vindbaarheid grondig onder de loep." },
+  { icon: FileCheck2, title: "Rapport ontvangen", text: "Je krijgt een helder overzicht van kansen en verbeterpunten." },
+  { icon: Mail, title: "Vrijblijvend gesprek", text: "Optioneel bespreken we de uitkomst samen, zonder verplichtingen." },
 ];
 
 export default function GratisScanPage() {
   return (
     <>
+      <BreadcrumbSchema items={[{ name: "Home", path: "/" }, { name: "Gratis Scan", path: "/gratis-scan" }]} />
+
       <section className="relative overflow-hidden border-b border-border">
         <div className="absolute inset-0 bg-dot-grid mask-fade-b opacity-70" />
         <div className="container-flow relative grid gap-12 py-24 md:grid-cols-[1.1fr_0.9fr] md:items-center md:py-28">
@@ -35,12 +44,12 @@ export default function GratisScanPage() {
               100% gratis &amp; vrijblijvend
             </span>
             <h1 className="mt-5 font-display text-4xl font-semibold leading-tight tracking-tight md:text-5xl">
-              Waar laat jouw website of online aanwezigheid kansen liggen?
+              Waar laat jouw website kansen liggen?
             </h1>
             <p className="mt-5 max-w-xl text-lg leading-relaxed text-muted">
-              Wij scannen je website en online vindbaarheid en laten precies
-              zien waar de pijnpunten zitten — en wat erbij wint als je ze
-              oplost. Voor ondernemers in Gelderland en heel Nederland.
+              We scannen je website en online vindbaarheid en laten zien waar
+              de pijnpunten zitten, en wat je opschiet als je ze oplost. Voor
+              ondernemers in Gelderland en de rest van Nederland.
             </p>
           </FadeIn>
           <FadeIn delay={0.1}>
@@ -53,10 +62,7 @@ export default function GratisScanPage() {
 
       <section className="py-24 md:py-28">
         <div className="container-flow">
-          <SectionHeading
-            eyebrow="Wat wij checken"
-            title="Vier invalshoeken, één helder rapport."
-          />
+          <SectionHeading eyebrow="Wat we checken" title="Dit nemen we voor je onder de loep" />
           <FadeInStagger className="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
             {checks.map((c) => (
               <FadeInItem key={c.title}>
@@ -75,7 +81,7 @@ export default function GratisScanPage() {
 
       <section className="border-t border-border bg-surface py-24 md:py-28">
         <div className="container-flow">
-          <SectionHeading eyebrow="Hoe het werkt" title="Van aanvraag tot concreet rapport." />
+          <SectionHeading eyebrow="Hoe het werkt" title="Zo verloopt de scan, van aanvraag tot rapport" />
           <FadeInStagger className="mt-12 grid gap-8 md:grid-cols-4">
             {steps.map((step, i) => (
               <FadeInItem key={step.title}>

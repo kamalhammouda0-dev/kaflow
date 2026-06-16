@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Space_Grotesk, Manrope } from "next/font/google";
 import "./globals.css";
 import { Navbar } from "@/components/Navbar";
@@ -34,8 +34,15 @@ export const metadata: Metadata = {
     "webdesign Heteren",
     "webdesign Arnhem",
     "webdesign Nijmegen",
+    "website laten maken Apeldoorn",
+    "website laten maken Ede",
   ],
-  authors: [{ name: SITE.name }],
+  authors: [{ name: SITE.name, url: SITE.url }],
+  creator: SITE.name,
+  publisher: SITE.name,
+  alternates: {
+    canonical: "/",
+  },
   openGraph: {
     type: "website",
     locale: "nl_NL",
@@ -52,7 +59,22 @@ export const metadata: Metadata = {
   robots: {
     index: true,
     follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
   },
+  formatDetection: {
+    telephone: false,
+  },
+};
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  themeColor: "#3b5ef5",
 };
 
 export default function RootLayout({

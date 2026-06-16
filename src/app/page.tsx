@@ -23,10 +23,16 @@ import { RegionNetwork } from "@/components/RegionNetwork";
 import { FaqAccordion } from "@/components/FaqAccordion";
 import { FaqSchema } from "@/components/StructuredData";
 
+const title = "KA Flow — websites & AI-agents in Gelderland en heel Nederland";
+const description =
+  "KA Flow bouwt websites op maat en AI-agents voor ZZP'ers en MKB, vanuit Heteren, Gelderland, actief in heel Nederland. Vraag een gratis scan aan.";
+
 export const metadata: Metadata = {
-  title: "KA Flow — Websites & AI-agents in Gelderland en heel Nederland",
-  description:
-    "KA Flow bouwt websites op maat en AI-agents & automatiseringen voor ZZP'ers en MKB. Gevestigd in Heteren, Gelderland — actief in heel Nederland. Vraag een gratis scan aan.",
+  title,
+  description,
+  alternates: { canonical: "/" },
+  openGraph: { title, description, url: "/" },
+  twitter: { title, description },
 };
 
 const services = [
@@ -34,49 +40,49 @@ const services = [
     icon: Globe2,
     title: "Websites op maat",
     description:
-      "Geen templates, geen genoegen nemen met 'goed genoeg'. Wij bouwen de website precies zoals jij ze voor ogen hebt — snel, modern en gemaakt om mee te groeien met je bedrijf.",
+      "We bouwen geen websites uit een sjabloon. Je krijgt een site die past bij hoe jouw bedrijf werkt, snel laadt en meegroeit zodra je uitbreidt.",
   },
   {
     icon: Bot,
     title: "AI-agents & automatisering",
     description:
-      "Bespaar uren per week. Wij ontwikkelen AI-agents en automatiseringen die herhalend werk overnemen — van klantcontact en leadopvolging tot administratie.",
+      "We ontwikkelen AI-agents die terugkerend werk overnemen, zoals het opvolgen van leads, klantvragen beantwoorden en administratie. Dat scheelt al snel een paar uur per week.",
   },
 ];
 
 const steps = [
-  { icon: MessageSquare, title: "Kennismaking", description: "Wij bespreken je doelen, je klanten en waar je nu tegenaan loopt." },
-  { icon: Compass, title: "Strategie & ontwerp", description: "Wij vertalen jouw wensen naar een concreet plan en een ontwerp op maat." },
-  { icon: Hammer, title: "Bouwen & automatiseren", description: "Wij bouwen je website en/of AI-agent, met korte feedbacklijnen." },
-  { icon: Rocket, title: "Live & doorgroeien", description: "Wij lanceren, meten resultaat en bouwen door waar nodig." },
+  { icon: MessageSquare, title: "Kennismaking", description: "We bespreken je doelen, je klanten en waar je nu tegenaan loopt." },
+  { icon: Compass, title: "Strategie & ontwerp", description: "We vertalen jouw wensen naar een concreet plan en een ontwerp op maat." },
+  { icon: Hammer, title: "Bouwen & automatiseren", description: "We bouwen je website en/of AI-agent, met korte feedbacklijnen." },
+  { icon: Rocket, title: "Live & doorgroeien", description: "We lanceren, meten resultaat en bouwen door waar nodig." },
 ];
 
 const trustPoints = [
-  "Persoonlijk contact, geen tussenpersonen",
-  "Gebouwd rond jouw proces, niet andersom",
-  "Transparante prijzen, geen verrassingen",
+  "Rechtstreeks contact met wie ook echt bouwt",
+  "We sluiten aan op hoe jij al werkt",
+  "Vooraf een duidelijke prijsafspraak",
 ];
 
 const faqs = [
   {
     question: "Werkt KA Flow ook buiten Gelderland?",
     answer:
-      "Ja. Wij zijn gevestigd in Heteren, Gelderland, en werken vanuit daar voor ondernemers in heel Nederland. Vervolgafspraken kunnen op locatie of volledig op afstand.",
+      "Ja. We zijn gevestigd in Heteren, Gelderland, en werken vanuit daar voor ondernemers in heel Nederland. Vervolgafspraken kunnen op locatie of volledig op afstand.",
   },
   {
     question: "Komen jullie ook echt persoonlijk langs?",
     answer:
-      "Ja, altijd. Voor de eerste kennismaking komen we graag persoonlijk bij je langs voor een goed gesprek — waar in Nederland je ook gevestigd bent. Dat persoonlijke contact is voor ons net zo belangrijk als het eindresultaat.",
+      "Ja, altijd. Voor de eerste kennismaking komen we graag persoonlijk bij je langs, ook als je niet in Gelderland zit. Dat persoonlijke contact vinden we net zo belangrijk als het eindresultaat.",
   },
   {
     question: "Wat kost een website of AI-agent van KA Flow?",
     answer:
-      "Dat hangt af van je wensen. Na een gratis scan of kennismaking ontvang je een transparante offerte op maat — zonder verborgen kosten.",
+      "Dat hangt af van je wensen. Na een gratis scan of kennismaking ontvang je een duidelijke offerte op maat, zonder verborgen kosten.",
   },
   {
     question: "Wat is de gratis scan precies?",
     answer:
-      "Wij analyseren je website en online vindbaarheid en laten zien waar kansen liggen op het gebied van snelheid, SEO, conversie en automatisering. Volledig vrijblijvend.",
+      "We analyseren je website en online vindbaarheid en laten zien waar kansen liggen op het gebied van snelheid, SEO, conversie en automatisering. Volledig vrijblijvend.",
   },
   {
     question: "Hoe snel kan mijn website live staan?",
@@ -110,9 +116,9 @@ export default function Home() {
             </FadeIn>
             <FadeIn delay={0.2}>
               <p className="mt-6 max-w-lg text-lg leading-relaxed text-muted">
-                KA Flow bouwt websites op maat en automatiseert je
-                bedrijfsprocessen met AI — voor ondernemers in Gelderland en
-                heel Nederland die vooruit willen, niet achterblijven.
+                KA Flow bouwt websites op maat en automatiseert
+                bedrijfsprocessen met AI, voor ondernemers in Gelderland en
+                de rest van Nederland die met hun tijd willen meegaan.
               </p>
             </FadeIn>
             <FadeIn delay={0.3}>
@@ -149,8 +155,8 @@ export default function Home() {
         <div className="container-flow py-24 md:py-28">
           <SectionHeading
             eyebrow="Wat wij doen"
-            title="Twee disciplines, één doel: jouw bedrijf vooruit helpen."
-            description="Een sterke online aanwezigheid en slimme automatisering versterken elkaar. Wij combineren beide, op maat van jouw bedrijf."
+            title="We bouwen websites én de automatisering die daarachter draait"
+            description="Een goede website en slimme automatisering werken het best samen, dus bieden we ze ook samen aan, afgestemd op jouw bedrijf."
           />
 
           <FadeInStagger className="mt-14 grid gap-6 md:grid-cols-2">
@@ -181,8 +187,8 @@ export default function Home() {
         <div className="container-flow">
           <SectionHeading
             eyebrow="Werkwijze"
-            title="Helder proces, korte lijnen."
-            description="Geen dikke offertes of vage trajecten. Vier stappen van kennismaking tot een werkende website of AI-agent."
+            title="Zo verloopt een project"
+            description="Geen dikke offerte vol vakjargon. Vier stappen, van het eerste gesprek tot een werkende website of AI-agent."
           />
 
           <FadeInStagger className="mt-14 grid gap-8 md:grid-cols-4">
@@ -222,9 +228,9 @@ export default function Home() {
                   Benieuwd waar jouw website kansen laat liggen?
                 </h2>
                 <p className="mx-auto mt-4 max-w-xl text-base leading-relaxed text-dark-muted md:text-lg">
-                  Vraag een gratis scan aan en ontvang een concreet rapport
-                  met de grootste pijnpunten en kansen — voor je website,
-                  vindbaarheid en automatisering.
+                  Vraag een gratis scan aan. Je krijgt een rapport met de
+                  belangrijkste knelpunten en kansen op het gebied van je
+                  website, vindbaarheid en automatisering.
                 </p>
                 <div className="mt-8 flex justify-center">
                   <Button href="/gratis-scan" variant="dark">
@@ -245,8 +251,8 @@ export default function Home() {
             eyebrow="Werkgebied"
             align="center"
             className="mx-auto text-center"
-            title="Geworteld in Gelderland. Actief in heel Nederland."
-            description="Vanuit Heteren werken wij voor ondernemers in Arnhem, Nijmegen, Apeldoorn, Ede en Doetinchem — én voor ZZP'ers en MKB door heel Nederland. Voor de eerste kennismaking komen we altijd persoonlijk langs, waar in Nederland je ook gevestigd bent — dat stukje persoonlijk contact laten we nooit los."
+            title="Geworteld in Gelderland, actief in heel Nederland"
+            description="Vanuit Heteren werken we voor ondernemers in Arnhem, Nijmegen, Apeldoorn, Ede en Doetinchem, en voor ZZP'ers en MKB door heel Nederland. Voor de eerste kennismaking komen we altijd persoonlijk langs, ook als je aan de andere kant van het land zit."
           />
           <FadeIn delay={0.15} className="mt-12">
             <RegionNetwork />
@@ -254,7 +260,7 @@ export default function Home() {
           <FadeIn delay={0.2} className="mx-auto mt-10 max-w-xl text-center">
             <p className="inline-flex items-center gap-2 rounded-full border border-border bg-surface px-4 py-2 text-sm font-medium text-muted">
               <Sparkles className="h-4 w-4 text-accent-violet" />
-              Eerste kennismaking? Die komen we altijd persoonlijk bij je langsbrengen.
+              Eerste kennismaking? Daar komen we graag persoonlijk voor langs.
             </p>
           </FadeIn>
         </div>
@@ -278,14 +284,13 @@ export default function Home() {
                 <span className="text-gradient">autonoom.</span>
               </>
             }
-            description="Terwijl veel bedrijven nog alles handmatig doen, lopen onze klanten al voor. Agents die leads opvolgen. Processen die zichzelf optimaliseren. Websites die meebewegen met je groei."
+            description="Bedrijven die nu nog alles handmatig doen, lopen straks achter de feiten aan. Agents volgen leads op, processen stellen zichzelf bij en de website groeit gewoon mee."
           />
 
           <FadeIn delay={0.15} className="mt-6 mx-auto max-w-2xl text-center">
             <p className="text-base leading-relaxed text-dark-muted md:text-lg">
-              KA Flow helpt ZZP&apos;ers en MKB nu al die stap te zetten —
-              zodat jij klaarstaat voor wat komt, in plaats van pas in actie
-              te komen wanneer het niet meer anders kan.
+              KA Flow helpt je nu al die stap te zetten, zodat je niet pas in
+              actie komt op het moment dat het niet anders meer kan.
             </p>
           </FadeIn>
 
@@ -327,11 +332,11 @@ export default function Home() {
         <div className="container-flow">
           <FadeIn>
             <h2 className="font-display text-3xl font-semibold tracking-tight md:text-4xl">
-              Klaar om de volgende stap te zetten?
+              Tijd voor de volgende stap?
             </h2>
             <p className="mx-auto mt-4 max-w-xl text-base leading-relaxed text-muted md:text-lg">
-              Plan een vrijblijvend gesprek en ontdek wat een website op maat
-              of een AI-agent voor jouw bedrijf kan betekenen.
+              Plan een vrijblijvend gesprek en kijk wat een website op maat
+              of een AI-agent voor jouw bedrijf kan doen.
             </p>
             <div className="mt-8 flex justify-center">
               <Button href="/gratis-scan">

@@ -15,43 +15,52 @@ import {
 import { Button } from "@/components/ui/Button";
 import { FadeIn, FadeInStagger, FadeInItem } from "@/components/FadeIn";
 import { SectionHeading } from "@/components/SectionHeading";
+import { BreadcrumbSchema } from "@/components/StructuredData";
+
+const title = "Diensten — websites en AI-agents | KA Flow";
+const description =
+  "Websites op maat en AI-agents voor ZZP'ers en MKB in Gelderland en de rest van Nederland. Bekijk wat KA Flow voor jouw bedrijf kan bouwen.";
 
 export const metadata: Metadata = {
-  title: "Diensten — KA Flow",
-  description:
-    "Websites op maat en AI-agents & automatisering voor ZZP'ers en MKB in Gelderland en heel Nederland. Ontdek wat KA Flow voor jouw bedrijf kan betekenen.",
+  title,
+  description,
+  alternates: { canonical: "/diensten" },
+  openGraph: { title, description, url: "/diensten" },
+  twitter: { title, description },
 };
 
 const websiteFeatures = [
-  { icon: PenLine, text: "Volledig op maat ontworpen, geen templates" },
-  { icon: Gauge, text: "Razendsnel en geoptimaliseerd voor elk apparaat" },
-  { icon: Workflow, text: "Gebouwd om mee te groeien met je bedrijf" },
-  { icon: CheckCircle2, text: "Inclusief vindbaarheid (SEO) en heldere structuur" },
+  { icon: PenLine, text: "Op maat ontworpen, geen kant-en-klare sjablonen" },
+  { icon: Gauge, text: "Snel geladen, ook op mobiel" },
+  { icon: Workflow, text: "Uitbreidbaar zodra je bedrijf groeit" },
+  { icon: CheckCircle2, text: "Vindbaarheid (SEO) en een heldere structuur als basis" },
 ];
 
 const automationFeatures = [
   { icon: MessageCircle, text: "AI-agents die klantvragen en leads opvolgen" },
   { icon: FileSpreadsheet, text: "Automatisering van administratie en data-invoer" },
-  { icon: Mail, text: "Slimme e-mail- en berichtenflows, dag en nacht actief" },
+  { icon: Mail, text: "E-mail- en berichtenflows die ook 's avonds doorlopen" },
   { icon: Wrench, text: "Koppelingen met de tools die je al gebruikt" },
 ];
 
 const addOns = [
   {
-    title: "Onderhoud & doorontwikkeling",
+    title: "Onderhoud en doorontwikkeling",
     description:
-      "Een website of automatisering is nooit echt 'klaar'. Wij blijven beschikbaar voor updates, uitbreidingen en bijsturing zodra je bedrijf verandert.",
+      "Een website of automatisering is nooit echt klaar. We blijven beschikbaar voor updates, uitbreidingen en bijsturing zodra je bedrijf verandert.",
   },
   {
     title: "Strategisch advies",
     description:
-      "Twijfel je waar te beginnen? Samen bepalen we wat het meeste oplevert: een nieuwe website, automatisering, of allebei. Begin met een gratis scan.",
+      "Twijfel je waar te beginnen? Samen bepalen we wat het meeste oplevert: een nieuwe website, automatisering, of allebei. Een gratis scan is een goed startpunt.",
   },
 ];
 
 export default function DienstenPage() {
   return (
     <>
+      <BreadcrumbSchema items={[{ name: "Home", path: "/" }, { name: "Diensten", path: "/diensten" }]} />
+
       <section className="relative overflow-hidden border-b border-border bg-surface">
         <div className="absolute inset-0 bg-dot-grid mask-fade-b opacity-50" />
         <div className="container-flow relative py-24 md:py-28">
@@ -60,13 +69,12 @@ export default function DienstenPage() {
               Diensten
             </span>
             <h1 className="mt-5 max-w-2xl font-display text-4xl font-semibold leading-tight tracking-tight md:text-5xl">
-              Alles wat jouw bedrijf nodig heeft om online vooruit te komen.
+              Een website die werkt, en automatisering die meedenkt.
             </h1>
             <p className="mt-5 max-w-xl text-lg leading-relaxed text-muted">
-              Of je nu een nieuwe website nodig hebt, je processen wilt
-              automatiseren met AI, of allebei — wij bouwen het op maat,
-              precies zoals jij het voor ogen hebt. Voor ondernemers in
-              Gelderland en heel Nederland.
+              Of je nu een nieuwe website nodig hebt, je werkprocessen wilt
+              automatiseren met AI, of allebei: we bouwen het op maat, voor
+              ondernemers in Gelderland en de rest van Nederland.
             </p>
           </FadeIn>
         </div>
@@ -83,10 +91,10 @@ export default function DienstenPage() {
               Websites op maat
             </h2>
             <p className="mt-4 text-base leading-relaxed text-muted">
-              Een website is vaak het eerste contact tussen jou en je klant.
-              Daarom bouwen wij geen standaard templates, maar websites die
-              precies passen bij jouw merk, jouw klanten en jouw manier van
-              werken — van eerste schets tot livegang.
+              Een website is vaak het eerste contact tussen jou en een
+              nieuwe klant. Daarom werken we niet met standaard sjablonen:
+              elke site wordt opgebouwd rond jouw merk, jouw klanten en de
+              manier waarop jij werkt, van eerste schets tot livegang.
             </p>
             <div className="mt-8">
               <Button href="/contact" variant="secondary">
@@ -136,7 +144,7 @@ export default function DienstenPage() {
             </h2>
             <p className="mt-4 text-base leading-relaxed text-muted">
               Veel tijd in je bedrijf gaat zitten in werk dat zich herhaalt:
-              vragen beantwoorden, gegevens overtypen, offertes opvolgen. Wij
+              vragen beantwoorden, gegevens overtypen, offertes opvolgen. We
               bouwen AI-agents en automatiseringen die dat werk overnemen,
               zodat jij je kunt richten op je klanten en je vak.
             </p>
@@ -153,7 +161,7 @@ export default function DienstenPage() {
       {/* Add-ons */}
       <section className="py-24 md:py-28">
         <div className="container-flow">
-          <SectionHeading eyebrow="Ook beschikbaar" title="Wat erbij komt zodra je verder groeit." />
+          <SectionHeading eyebrow="Ook beschikbaar" title="Wat erbij komt zodra je verder groeit" />
           <FadeInStagger className="mt-12 grid gap-6 md:grid-cols-2">
             {addOns.map((item) => (
               <FadeInItem key={item.title}>
@@ -175,8 +183,8 @@ export default function DienstenPage() {
               Niet zeker wat je nodig hebt?
             </h2>
             <p className="mx-auto mt-4 max-w-xl text-base leading-relaxed text-muted md:text-lg">
-              Dat hoeft ook niet. Vraag een gratis scan aan en wij laten zien
-              waar voor jouw bedrijf de meeste winst te behalen is.
+              Dat hoeft ook niet. Vraag een gratis scan aan, dan laten we
+              zien waar voor jouw bedrijf de meeste winst te behalen is.
             </p>
             <div className="mt-8 flex justify-center">
               <Button href="/gratis-scan">

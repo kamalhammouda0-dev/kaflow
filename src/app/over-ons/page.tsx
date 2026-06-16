@@ -4,34 +4,43 @@ import { Button } from "@/components/ui/Button";
 import { FadeIn, FadeInStagger, FadeInItem } from "@/components/FadeIn";
 import { SectionHeading } from "@/components/SectionHeading";
 import { LogoMark } from "@/components/LogoMark";
+import { BreadcrumbSchema } from "@/components/StructuredData";
+
+const title = "Over ons — KA Flow in Heteren, Gelderland";
+const description =
+  "KA Flow is gevestigd in Heteren, Gelderland, en helpt ZZP'ers en MKB in heel Nederland met websites op maat en AI-automatisering.";
 
 export const metadata: Metadata = {
-  title: "Over ons — KA Flow",
-  description:
-    "KA Flow is gevestigd in Heteren, Gelderland, en helpt ZZP'ers en MKB in heel Nederland met websites op maat en AI-automatisering.",
+  title,
+  description,
+  alternates: { canonical: "/over-ons" },
+  openGraph: { title, description, url: "/over-ons" },
+  twitter: { title, description },
 };
 
 const values = [
   {
     icon: Target,
     title: "Precisie",
-    description: "Geen genoegen nemen met 'goed genoeg' — wij bouwen precies wat jij voor ogen hebt.",
+    description: "We nemen geen genoegen met de eerste versie die werkt. We blijven schaven tot het ook echt klopt.",
   },
   {
     icon: HeartHandshake,
     title: "Persoonlijk",
-    description: "Je werkt rechtstreeks met ons, geen account managers of tussenlagen.",
+    description: "Je werkt rechtstreeks met ons, zonder account managers of tussenlagen.",
   },
   {
     icon: Lightbulb,
     title: "Vooruitdenken",
-    description: "Wij bouwen niet alleen voor nu, maar houden rekening met waar je bedrijf naartoe groeit.",
+    description: "We bouwen met een blik op de toekomst: wat heb je straks nodig als je bedrijf groter is?",
   },
 ];
 
 export default function OverOnsPage() {
   return (
     <>
+      <BreadcrumbSchema items={[{ name: "Home", path: "/" }, { name: "Over ons", path: "/over-ons" }]} />
+
       <section className="relative overflow-hidden border-b border-border bg-surface">
         <div className="absolute inset-0 bg-dot-grid mask-fade-b opacity-50" />
         <div className="container-flow relative grid gap-12 py-24 md:grid-cols-[1fr_0.8fr] md:items-center md:py-28">
@@ -40,7 +49,7 @@ export default function OverOnsPage() {
               Over ons
             </span>
             <h1 className="mt-5 font-display text-4xl font-semibold leading-tight tracking-tight md:text-5xl">
-              Eén vast aanspreekpunt. Volledige aandacht voor jouw bedrijf.
+              Bij KA Flow werk je met een vast aanspreekpunt dat je bedrijf leert kennen.
             </h1>
             <p className="mt-5 max-w-xl text-lg leading-relaxed text-muted">
               KA Flow is gevestigd in Heteren, Gelderland, en bouwt websites
@@ -49,10 +58,10 @@ export default function OverOnsPage() {
               aandacht niet ten koste van elkaar hoeven te gaan.
             </p>
             <p className="mt-4 max-w-xl text-base leading-relaxed text-muted">
-              Wat ooit begon met het bouwen van websites, groeide uit tot een
-              bredere missie: ondernemers helpen om met technologie — en
-              specifiek AI — slimmer te werken, zonder dat het ten koste gaat
-              van persoonlijk contact met hún klanten.
+              Wat begon met het bouwen van websites, groeide uit tot een
+              bredere missie: ondernemers helpen om slimmer te werken met
+              technologie, vooral met AI, zonder het persoonlijke contact met
+              hún klanten te verliezen.
             </p>
           </FadeIn>
 
@@ -69,7 +78,7 @@ export default function OverOnsPage() {
       {/* Values */}
       <section className="py-24 md:py-28">
         <div className="container-flow">
-          <SectionHeading eyebrow="Waar wij voor staan" title="De waarden achter elk project." />
+          <SectionHeading eyebrow="Waar wij voor staan" title="De waarden achter elk project" />
           <FadeInStagger className="mt-12 grid gap-6 md:grid-cols-3">
             {values.map((value) => (
               <FadeInItem key={value.title}>
@@ -105,9 +114,9 @@ export default function OverOnsPage() {
             <ul className="space-y-5">
               {[
                 "Directe communicatie, zonder ruis of vertraging",
-                "Maatwerk in plaats van one-size-fits-all oplossingen",
-                "Kennis van zowel webdesign als AI/automatisering, in huis",
-                "Eerlijk advies — ook als de oplossing kleiner is dan gedacht",
+                "Maatwerk in plaats van een standaardoplossing",
+                "Kennis van zowel webdesign als AI en automatisering, in huis",
+                "Eerlijk advies, ook als de oplossing kleiner is dan je dacht",
                 "Altijd een persoonlijke eerste kennismaking op locatie, waar in Nederland je ook zit",
               ].map((item) => (
                 <li key={item} className="flex gap-3 text-sm leading-relaxed">
@@ -125,10 +134,10 @@ export default function OverOnsPage() {
         <div className="container-flow">
           <FadeIn>
             <h2 className="font-display text-3xl font-semibold tracking-tight md:text-4xl">
-              Laten we kennismaken.
+              Laten we kennismaken
             </h2>
             <p className="mx-auto mt-4 max-w-xl text-base leading-relaxed text-muted md:text-lg">
-              Vertel ons over je bedrijf en je ambities — dan denken wij vrijblijvend mee.
+              Vertel ons over je bedrijf en je plannen, dan denken wij vrijblijvend mee.
             </p>
             <div className="mt-8 flex justify-center">
               <Button href="/gratis-scan">

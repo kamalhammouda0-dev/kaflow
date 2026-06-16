@@ -16,9 +16,8 @@ export function Footer() {
               </span>
             </Link>
             <p className="mt-4 max-w-sm text-sm leading-relaxed text-muted">
-              Websites op maat en AI-agents die jouw bedrijf vooruit helpen.
-              Gevestigd in Heteren, Gelderland — actief voor ZZP&apos;ers en
-              MKB in heel Nederland.
+              Websites op maat en AI-agents voor ZZP&apos;ers en MKB.
+              Gevestigd in Heteren, Gelderland, actief in heel Nederland.
             </p>
           </div>
 
@@ -59,7 +58,7 @@ export function Footer() {
 
         <div className="mt-12 flex flex-col-reverse items-center justify-between gap-4 border-t border-border pt-8 text-xs text-muted md:flex-row">
           <p>&copy; {new Date().getFullYear()} KA Flow. Alle rechten voorbehouden. KvK: {SITE.kvk}</p>
-          <p>Actief in Gelderland &amp; heel Nederland. Gebouwd met precisie, geautomatiseerd met intentie.</p>
+          <p>Actief in Gelderland en de rest van Nederland.</p>
         </div>
       </div>
     </footer>
