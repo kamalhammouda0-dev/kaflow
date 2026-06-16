@@ -1,41 +1,45 @@
 "use client";
 
 import { useState, type FormEvent } from "react";
-import { Send, CheckCircle2 } from "lucide-react";
+import { Send, CheckCircle2, Loader2 } from "lucide-react";
 
 export function ContactForm() {
-  const [sent, setSent] = useState(false);
+  const [status, setStatus] = useState<"idle" | "loading" | "sent" | "error">("idle");
+  const [errorMsg, setErrorMsg] = useState("");
 
-  function handleSubmit(e: FormEvent<HTMLFormElement>) {
+  async function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
+    setStatus("loading");
     const form = e.currentTarget;
     const data = new FormData(form);
-    const name = String(data.get("name") ?? "");
-    const email = String(data.get("email") ?? "");
-    const company = String(data.get("company") ?? "");
-    const message = String(data.get("message") ?? "");
 
-    const subject = encodeURIComponent(`Kennismaking via KA Flow — ${name}`);
-    const body = encodeURIComponent(
-      `Naam: ${name}\nBedrijf: ${company}\nE-mail: ${email}\n\n${message}`
-    );
+    const res = await fetch("/api/contact", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        name: data.get("name"),
+        email: data.get("email"),
+        company: data.get("company"),
+        message: data.get("message"),
+      }),
+    });
 
-    window.location.href = `mailto:Kamalhammouda0@gmail.com?subject=${subject}&body=${body}`;
-    setSent(true);
+    if (res.ok) {
+      setStatus("sent");
+    } else {
+      const json = await res.json().catch(() => ({}));
+      setErrorMsg(json.error ?? "Er ging iets mis. Probeer het opnieuw.");
+      setStatus("error");
+    }
   }
 
-  if (sent) {
+  if (status === "sent") {
     return (
-      <div className="flex flex-col items-center gap-4 rounded-3xl border border-border bg-surface p-10 text-center">
+      <div className="flex flex-col items-center gap-4 py-10 text-center">
         <CheckCircle2 className="h-10 w-10 text-accent-violet" />
-        <h3 className="font-display text-xl font-semibold">Je mailprogramma opent zich</h3>
+        <h3 className="font-display text-xl font-semibold">Bericht verzonden!</h3>
         <p className="max-w-sm text-sm leading-relaxed text-muted">
-          Verstuur de e-mail om je bericht te versturen. Reageert er niets?
-          Mail dan rechtstreeks naar{" "}
-          <a href="mailto:Kamalhammouda0@gmail.com" className="font-semibold text-accent-blue">
-            Kamalhammouda0@gmail.com
-          </a>
-          .
+          We nemen binnen één werkdag contact met je op.
         </p>
       </div>
     );
@@ -99,12 +103,28 @@ export function ContactForm() {
         />
       </div>
 
+      {status === "error" && (
+        <p className="rounded-xl border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-600">
+          {errorMsg}
+        </p>
+      )}
+
       <button
         type="submit"
-        className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-gradient-flow px-7 py-3.5 text-sm font-semibold text-white shadow-lg shadow-accent-blue/20 transition-all hover:-translate-y-0.5 hover:shadow-xl hover:shadow-accent-violet/30 md:w-auto"
+        disabled={status === "loading"}
+        className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-gradient-flow px-7 py-3.5 text-sm font-semibold text-white shadow-lg shadow-accent-blue/20 transition-all hover:-translate-y-0.5 hover:shadow-xl hover:shadow-accent-violet/30 disabled:opacity-60 disabled:cursor-not-allowed md:w-auto"
       >
-        Verstuur bericht
-        <Send className="h-4 w-4" />
+        {status === "loading" ? (
+          <>
+            <Loader2 className="h-4 w-4 animate-spin" />
+            Versturen…
+          </>
+        ) : (
+          <>
+            Verstuur bericht
+            <Send className="h-4 w-4" />
+          </>
+        )}
       </button>
     </form>
   );
