@@ -34,10 +34,9 @@ export async function POST(req: Request) {
     });
 
     return NextResponse.json({ ok: true });
-  } catch {
-    return NextResponse.json(
-      { error: "Er ging iets mis. Probeer het opnieuw of mail rechtstreeks." },
-      { status: 500 }
-    );
+  } catch (err) {
+    const msg = err instanceof Error ? err.message : String(err);
+    console.error("[scan]", msg);
+    return NextResponse.json({ error: msg }, { status: 500 });
   }
 }
