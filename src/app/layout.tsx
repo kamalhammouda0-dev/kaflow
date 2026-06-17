@@ -50,11 +50,13 @@ export const metadata: Metadata = {
     siteName: SITE.name,
     title: "KA Flow — Websites & AI-agents in Gelderland en heel Nederland",
     description: SITE.description,
+    images: [{ url: "/og.png", width: 1200, height: 630 }],
   },
   twitter: {
     card: "summary_large_image",
     title: "KA Flow — Websites & AI-agents in Gelderland en heel Nederland",
     description: SITE.description,
+    images: ["/og.png"],
   },
   robots: {
     index: true,
