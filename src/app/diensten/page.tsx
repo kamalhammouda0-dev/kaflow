@@ -17,9 +17,9 @@ import { FadeIn, FadeInStagger, FadeInItem } from "@/components/FadeIn";
 import { SectionHeading } from "@/components/SectionHeading";
 import { BreadcrumbSchema } from "@/components/StructuredData";
 
-const title = "Diensten — websites en AI-agents | KA Flow";
+const title = "Diensten — websites en AI-agents voor heel Nederland | KA Flow";
 const description =
-  "Websites op maat en AI-agents voor ZZP'ers en MKB in Gelderland en de rest van Nederland. Bekijk wat KA Flow voor jouw bedrijf kan bouwen.";
+  "Websites op maat en AI-agents voor ZZP'ers en MKB in heel Nederland. Bekijk wat KA Flow voor jouw bedrijf kan bouwen.";
 
 export const metadata: Metadata = {
   title,
@@ -74,7 +74,7 @@ export default function DienstenPage() {
             <p className="mt-5 max-w-xl text-lg leading-relaxed text-muted">
               Of je nu een nieuwe website nodig hebt, je werkprocessen wilt
               automatiseren met AI, of allebei: we bouwen het op maat, voor
-              ondernemers in Gelderland en de rest van Nederland.
+              ondernemers door heel Nederland.
             </p>
           </FadeIn>
         </div>

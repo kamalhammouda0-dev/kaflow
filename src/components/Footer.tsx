@@ -58,7 +58,7 @@ export function Footer() {
 
         <div className="mt-12 flex flex-col-reverse items-center justify-between gap-4 border-t border-border pt-8 text-xs text-muted md:flex-row">
           <p>&copy; {new Date().getFullYear()} KA Flow. Alle rechten voorbehouden. KvK: {SITE.kvk}</p>
-          <p>Actief in Gelderland en de rest van Nederland.</p>
+          <p>Actief in heel Nederland.</p>
         </div>
       </div>
     </footer>

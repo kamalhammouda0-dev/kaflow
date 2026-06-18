@@ -23,9 +23,9 @@ import { RegionNetwork } from "@/components/RegionNetwork";
 import { FaqAccordion } from "@/components/FaqAccordion";
 import { FaqSchema } from "@/components/StructuredData";
 
-const title = "KA Flow — websites & AI-agents in Gelderland en heel Nederland";
+const title = "KA Flow — websites & AI-agents voor heel Nederland";
 const description =
-  "KA Flow bouwt websites op maat en AI-agents voor ZZP'ers en MKB, vanuit Heteren, Gelderland, actief in heel Nederland. Vraag een gratis scan aan.";
+  "KA Flow bouwt websites op maat en AI-agents voor ZZP'ers en MKB in heel Nederland. Gevestigd in Gelderland, persoonlijk bereikbaar door het hele land. Vraag een gratis scan aan.";
 
 export const metadata: Metadata = {
   title,
@@ -105,7 +105,7 @@ export default function Home() {
             <FadeIn>
               <span className="inline-flex items-center gap-2 rounded-full border border-border bg-surface px-4 py-1.5 text-xs font-semibold uppercase tracking-wider text-accent-blue">
                 <Sparkles className="h-3.5 w-3.5" />
-                Gelderland &amp; heel Nederland
+                Actief in heel Nederland
               </span>
             </FadeIn>
             <FadeIn delay={0.1}>
@@ -117,8 +117,8 @@ export default function Home() {
             <FadeIn delay={0.2}>
               <p className="mt-6 max-w-lg text-lg leading-relaxed text-muted">
                 KA Flow bouwt websites op maat en automatiseert
-                bedrijfsprocessen met AI, voor ondernemers in Gelderland en
-                de rest van Nederland die met hun tijd willen meegaan.
+                bedrijfsprocessen met AI, voor ondernemers door heel
+                Nederland die met hun tijd willen meegaan.
               </p>
             </FadeIn>
             <FadeIn delay={0.3}>
@@ -251,8 +251,8 @@ export default function Home() {
             eyebrow="Werkgebied"
             align="center"
             className="mx-auto text-center"
-            title="Geworteld in Gelderland, actief in heel Nederland"
-            description="Vanuit Heteren werken we voor ondernemers in Arnhem, Nijmegen, Apeldoorn, Ede en Doetinchem, en voor ZZP'ers en MKB door heel Nederland. Voor de eerste kennismaking komen we altijd persoonlijk langs, ook als je aan de andere kant van het land zit."
+            title="Actief door heel Nederland"
+            description="We werken voor ondernemers van Amsterdam tot Eindhoven, van Rotterdam tot Groningen — en alles daartussenin. Voor de eerste kennismaking komen we altijd persoonlijk langs, waar in Nederland je ook zit. Ons kantoor is gevestigd in Heteren, Gelderland."
           />
           <FadeIn delay={0.15} className="mt-12">
             <RegionNetwork />
